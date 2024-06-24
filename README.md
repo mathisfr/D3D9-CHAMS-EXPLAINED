@@ -16,7 +16,7 @@ L'objectif de ce tutoriel est de vous fournir une compréhension complète des �
 
     ***Connaissances Techniques:***  
         - Compréhension de base de DirectX9  
-        *(Si vous n'avais jamais utiliser directx9, je vous conseil vivement de faire au moins les premieres partie de ce tutoriel pour comprendre la suite : https://www.braynzarsoft.net/viewtutorial/q16390-01-dx9-a-little-about-directx)*
+        *(Si vous n'avez jamais utilisé DirectX 9, je vous conseille vivement de commencer par les premières parties de ce tutoriel pour bien comprendre la suite  : https://www.braynzarsoft.net/viewtutorial/q16390-01-dx9-a-little-about-directx)*
         - Connaissances en programmation C++  
         - Connaissances en reverse engineering  
     ***Outils Nécessaires:***  
