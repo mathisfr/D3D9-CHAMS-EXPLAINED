@@ -20,7 +20,7 @@ L'objectif de ce tutoriel est de vous fournir une compréhension complète des �
         - Connaissances en programmation C++  
         - Connaissances en reverse engineering  
     ***Outils Nécessaires:***  
-        - Environnement de développement (Visual Studio recommandé)
+        - Environnement de développement (Visual Studio recommandé)  
         - SDK DirectX9
 
 ## Section 1: La base
