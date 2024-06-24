@@ -81,11 +81,11 @@ En combinant ces concepts avec des techniques avancées telles que le chams et l
 Bien que complexe, ce processus ouvre la voie à des applications créatives dans le domaine du modding et du développement de jeux.
 
 #### Liens utile
-https://www.braynzarsoft.net/viewtutorial/q16390-01-dx9-a-little-about-directx
-https://www.mpgh.net/forum/showthread.php?t=185844
-https://www.unknowncheats.me/wiki/Direct3D
-https://github.com/furkankadirguzeloglu/ImGuiHook-DirectX9
-https://www.codereversing.com/archives/181
+https://www.braynzarsoft.net/viewtutorial/q16390-01-dx9-a-little-about-directx  
+https://www.mpgh.net/forum/showthread.php?t=185844  
+https://www.unknowncheats.me/wiki/Direct3D  
+https://github.com/furkankadirguzeloglu/ImGuiHook-DirectX9  
+https://www.codereversing.com/archives/181  
 
 #### Note
 Il est important de noter que ces manipulations sont présentées uniquement à des fins éducatives et de compréhension des principes sous-jacents du développement de jeux.  
