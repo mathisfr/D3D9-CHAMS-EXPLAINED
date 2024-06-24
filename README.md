@@ -45,7 +45,7 @@ La méthode que je vais utiliser dans ce tutoriel est comme je l'ai dit une mét
 Cela signifie qu'elle peut uniquement être appelée depuis un objet spécifique.   
 Cet objet est **IDirect3DDevice9,** le même objet utilisé pour appeler des méthodes telles que **EndScene** dans l'application.  
 Ces informations sont essentielles pour contourner le programme.  
-Pour cela, je propose d'utiliser le VMT hook, cela implique de remplacer directement la méthode dans la table virtuelle (VMT) d'une classe.  
+Pour cela, je propose d'utiliser le **VMT hook**, cela implique de remplacer directement la méthode dans la table virtuelle (VMT) d'une classe.  
 Vous avez deux options simples : Créer un autre **IDirect3DDevice9** dans votre DLL au moment de l'injection, permettant de partager la même table virtuelle et ainsi de hooker les méthodes, ou bien utiliser un debugger pour trouver un pointeur statique dans l'application vers l'objet **IDirect3DDevice9** et remplacer les méthodes dans votre DLL.  
 Voici à quoi pourrait ressembler votre fonction qui encapsule l'original à ce moment :
 ```cpp
