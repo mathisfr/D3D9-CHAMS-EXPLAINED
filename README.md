@@ -38,7 +38,7 @@ La méthode **DrawIndexedPrimitive** prend plusieurs paramètres qui définissen
 5. StartIndex (UINT) : Index de départ dans le tableau d'indices pour commencer à dessiner.
 6. PrimitiveCount (UINT) : Nombre de primitives à dessiner.
 
-Donc l'objectif est de détourner cette fonction pour pouvoir l'utiliser à notre avantage.
+L'objectif est donc de détourner cette fonction afin de l'exploiter à notre avantage, étant donné qu'elle est appelée pour dessiner les objets à l'écran.  
 
 ## Section 2: Hook de la methodes
 La méthode que je vais utiliser dans ce tutoriel est comme je l'ai dit une méthode.  
