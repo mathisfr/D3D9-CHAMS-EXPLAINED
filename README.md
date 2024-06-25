@@ -1,7 +1,7 @@
 # Création d'un Chams Hack pour DirectX9  
 > Il est important de noter que ces manipulations sont présentées uniquement à des fins éducatives et de compréhension des principes sous-jacents du développement de jeux.
 ![cod4chamshack](https://github.com/mathisfr/D3D9-CHAMS-EXPLAINED/blob/main/cod4chams.png)
-* **Introduction**
+* **Introduction**  
 Bienvenue dans ce tutoriel dédié à l'explication du fonctionnement d'un chams hack pour DirectX9.  
 Les chams hacks sont des modifications de rendus graphiques dans les jeux vidéo qui permettent de rendre les modèles des joueurs plus visibles, facilitant ainsi leur détection.  
 Ce guide est spécialement conçu pour les développeurs et les passionnés de cybersécurité souhaitant explorer les techniques de hacking éthique dans le cadre de DirectX9.  
@@ -38,7 +38,7 @@ La méthode **DrawIndexedPrimitive** prend plusieurs paramètres qui définissen
 5. StartIndex (UINT) : Index de départ dans le tableau d'indices pour commencer à dessiner.
 6. PrimitiveCount (UINT) : Nombre de primitives à dessiner.
 
-L'objectif est donc de détourner cette fonction afin de l'exploiter à notre avantage, étant donné qu'elle est appelée pour dessiner les objets à l'écran.  
+L'objectif est donc de détourner cette fonction afin de l'exploiter à notre avantage, étant donné qu'elle est appelée pour dessiner les objets à l'écran et qu'on peut filtrer les types d'objets par rapport au PrimitiveCount et/ou NumVertices.  
 
 ## Section 2: Hook de la methodes
 La méthode que je vais utiliser dans ce tutoriel est comme je l'ai dit une méthode.  
