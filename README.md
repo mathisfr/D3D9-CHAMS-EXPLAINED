@@ -38,11 +38,11 @@ La méthode **DrawIndexedPrimitive** prend plusieurs paramètres qui définissen
 5. StartIndex (UINT) : Index de départ dans le tableau d'indices pour commencer à dessiner.
 6. PrimitiveCount (UINT) : Nombre de primitives à dessiner.
 
-L'objectif est donc de détourner cette fonction afin de l'exploiter à notre avantage, étant donné qu'elle est appelée pour dessiner les objets à l'écran et qu'on peut filtrer les types d'objets par rapport au PrimitiveCount et/ou NumVertices.  
+L'objectif est donc de détourner cette fonction afin de l'exploiter à notre avantage, étant donné qu'elle est appelée pour dessiner les objets à l'écran et qu'on peut filtrer les objets du jeu par rapport au **PrimitiveCount** et/ou **NumVertices**.  
 
 ## Section 2: Hook de la methodes
 La méthode que je vais utiliser dans ce tutoriel est comme je l'ai dit une méthode.  
-Cela signifie qu'elle peut uniquement être appelée depuis un objet spécifique.   
+Cela signifie qu'elle peut uniquement être appelée depuis un objet.   
 Cet objet est **IDirect3DDevice9,** le même objet utilisé pour appeler des méthodes telles que **EndScene** dans l'application.  
 Ces informations sont essentielles pour contourner le programme.  
 Pour cela, je propose d'utiliser le **VMT hook**, cela implique de remplacer directement la méthode dans la table virtuelle (VMT) d'une classe.  
