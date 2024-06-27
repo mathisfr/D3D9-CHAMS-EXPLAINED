@@ -25,7 +25,13 @@ L'objectif de ce tutoriel est de vous fournir une compréhension complète des �
 
 ## Section 1: La base
 Pour commencer nous allons avoir besoin d'un plan.  
-La méthode que je vais utiliser dans ce tutoriel est DrawIndexedPrimitive de DirectX 9.   
+
+De mon côté, je vais choisir d'intercepter une fonction utilisée par DirectX pour le rendu des objets dans le jeu.  
+Cela signifie que je vais mettre en place un système où dès que la fonction est appelée par le jeu, le flux d'exécution sera redirigé vers ma propre fonction, puis retournera à la fonction d'origine.  
+On pourrait voir cela comme la création d'un wrapper.  
+Cette approche permet de contrôler le comportement de la fonction d'origine tout en ajoutant des fonctionnalités supplémentaires nécessaires pour notre application.  
+
+La méthode que je vais utiliser dans ce tutoriel est **DrawIndexedPrimitive** de DirectX 9.   
 Cette méthode permet de dessiner des primitives (triangles, lignes, points) en utilisant des indices, ce qui est particulièrement utile pour réutiliser des sommets et optimiser ainsi la mémoire et les performances.   
 Cette méthode est largement utilisée dans de nombreux jeux DirectX 9.   
 
@@ -45,6 +51,7 @@ La méthode que je vais utiliser dans ce tutoriel est comme je l'ai dit une mét
 Cela signifie qu'elle peut uniquement être appelée depuis un objet.   
 Cet objet est **IDirect3DDevice9,** le même objet utilisé pour appeler des méthodes telles que **EndScene** dans l'application.  
 Ces informations sont essentielles pour contourner le programme.  
+
 Pour cela, je propose d'utiliser le **VMT hook**, cela implique de remplacer directement la méthode dans la table virtuelle (VMT) d'une classe.  
 Vous avez deux options simples : Créer un autre **IDirect3DDevice9** dans votre DLL au moment de l'injection, permettant de partager la même table virtuelle et ainsi de hooker les méthodes, ou bien utiliser un debugger pour trouver un pointeur statique dans l'application vers l'objet **IDirect3DDevice9** et remplacer les méthodes dans votre DLL.  
 Voici à quoi pourrait ressembler votre fonction qui encapsule l'original à ce moment :
@@ -56,6 +63,10 @@ HRESULT APIENTRY hkDrawIndexedPrimitive(LPDIRECT3DDEVICE9 pDevice, D3DPRIMITIVET
     return ogDrawIndexedPrimitive(pDevice, Type, BaseVertexIndex, MinIndex, NumVertices, startIndex, primitiveCount);
 }
 ```
+
+Si vous ne souhaitez pas implémenter le hook manuellement, ou si vous ne disposez pas nécessairement des compétences requises, je vous recommande d'utiliser une bibliothèque comme Minhook ou Polyhook *(voir les liens utiles plus bas dans la page)*.  
+
+Ces bibliothèques simplifient grandement le processus de hooking en fournissant des méthodes prêtes à l'emploi, ce qui vous permet de concentrer vos efforts sur la logique métier plutôt que sur les détails techniques du hooking.  
 
 ## Section 3: Création du Chams Hack
 Une fois que vous avez hooké cette fonction, vous pouvez très simplement mettre en place un chams voire un wallhack.  
@@ -80,12 +91,14 @@ Nous avons également discuté de l'application du hook VMT pour modifier dynami
 En combinant ces concepts avec des techniques avancées telles que le chams et le wallhack, il devient possible de personnaliser l'expérience de jeu en temps réel.  
 Bien que complexe, ce processus ouvre la voie à des applications créatives dans le domaine du modding et du développement de jeux.
 
-#### Liens utile
+#### Liens utiles
 https://www.braynzarsoft.net/viewtutorial/q16390-01-dx9-a-little-about-directx (Learn d3d9)    
 https://www.mpgh.net/forum/showthread.php?t=185844 (Very helpful d3d9 things)   
 https://www.unknowncheats.me/wiki/Direct3D (More about d3d9 hacking)    
 https://github.com/furkankadirguzeloglu/ImGuiHook-DirectX9 (Example and D3D9 Methods Tables)    
 https://www.codereversing.com/archives/181 (VMT hook)    
+https://www.codeproject.com/Articles/44326/MinHook-The-Minimalistic-x-x-API-Hooking-Libra (Minhook)  
+https://www.codeproject.com/Articles/1100579/PolyHook-The-Cplusplus-x-x-Hooking-Library (Polyhook)  
 
 #### Note
 Il est important de noter que ces manipulations sont présentées uniquement à des fins éducatives et de compréhension des principes sous-jacents du développement de jeux.  
