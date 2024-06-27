@@ -83,7 +83,7 @@ Juste avant de retourner à la méthode originale, vous pouvez ajouter une condi
 Une astuce que j'ai utilisée consiste à enregistrer une structure dans une Set de tous les types, nombres de sommets (NumVertices) et nombres de primitives (primitiveCount) du jeu. Ensuite, en utilisant les touches du clavier, je peux ajuster la condition en temps réel et voir les objets changer de couleur dans le jeu.
 
 Avec cela, votre chams devrait normalement fonctionner, bien que ce soit une méthode assez basique.  
-Par exemple, vous pouvez ajouter un wallhack en désactivant simplement le test de profondeur avec **SetRenderState**.
+Vous pouvez aussi ajouter un wallhack en désactivant simplement le test de profondeur avec **SetRenderState**.
 
 ### Conclusion
 En conclusion, nous avons exploré la méthode DrawIndexedPrimitive de DirectX 9, essentielle pour dessiner des primitives en utilisant des indices, ce qui optimise la mémoire et les performances en réutilisant les sommets.  
